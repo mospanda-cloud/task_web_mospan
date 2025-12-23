@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея-слайдер</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Галерея изображений</h1>
+        <p class="subtitle">Горизонтальный слайдер с пейджером</p>
+        
+        <div class="gallery-container">
+            <button class="arrow left-arrow" id="prev-btn" aria-label="Предыдущие изображения">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div class="gallery-wrapper">
+                <div class="gallery" id="gallery">
+                    <!-- Изображения будут вставлены сюда через JavaScript -->
+                </div>
+            </div>
+            
+            <button class="arrow right-arrow" id="next-btn" aria-label="Следующие изображения">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="pager" id="pager">
+            <!-- Пейджер будет сгенерирован автоматически -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

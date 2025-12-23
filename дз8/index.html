@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Задание 8 — Форма обратной связи</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="title">Демо-страница</h1>
+    <p class="subtitle">Нажмите кнопку, чтобы открыть форму обратной связи.</p>
+    <button id="openBtn" class="btn btn-primary" type="button">
+      Открыть форму
+    </button>
+  </header>
+
+  <main class="content">
+    <section class="card">
+      <h2>Контент страницы</h2>
+      <p>
+        Попап открывается поверх страницы. URL меняется через History API.
+        Кнопка «Назад» закрывает попап.
+      </p>
+    </section>
+  </main>
+
+  <div id="overlay" class="overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <h2 id="modalTitle" class="modal-title">Обратная связь</h2>
+        <button id="closeBtn" class="icon-btn" type="button" aria-label="Закрыть форму">×</button>
+      </div>
+
+      <form id="feedbackForm" class="form" novalidate>
+        <div class="grid">
+          <label class="field">
+            <span class="label">ФИО *</span>
+            <input name="fullName" type="text" autocomplete="name" required maxlength="120" />
+            <small class="hint">Как к вам обращаться</small>
+          </label>
+
+          <label class="field">
+            <span class="label">Email *</span>
+            <input name="email" type="email" autocomplete="email" required maxlength="120" />
+            <small class="hint">Например: name@example.com</small>
+          </label>
+
+          <label class="field">
+            <span class="label">Телефон *</span>
+            <input name="phone" type="tel" autocomplete="tel"
+                   inputmode="tel"
+                   placeholder="+7 (999) 123-45-67"
+                   required maxlength="30" />
+            <small class="hint">Можно без пробелов</small>
+          </label>
+
+          <label class="field">
+            <span class="label">Организация</span>
+            <input name="company" type="text" autocomplete="organization" maxlength="120" />
+            <small class="hint">Необязательно</small>
+          </label>
+        </div>
+
+        <label class="field">
+          <span class="label">Сообщение *</span>
+          <textarea name="message" required maxlength="1000" rows="4"
+                    placeholder="Коротко опишите ваш вопрос..."></textarea>
+          <small class="hint">До 1000 символов</small>
+        </label>
+
+        <label class="check">
+          <input name="consent" type="checkbox" required />
+          <span>Согласен(а) с политикой обработки персональных данных *</span>
+        </label>
+
+        <div class="actions">
+          <button class="btn btn-ghost" type="button" id="resetBtn">Очистить</button>
+          <button class="btn btn-primary" type="submit" id="submitBtn">Отправить</button>
+        </div>
+
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

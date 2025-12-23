@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор услуг</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Калькулятор стоимости услуги</h1>
+        
+        <div class="calculator">
+            <div class="form-group">
+                <label>Тип услуги:</label>
+                <div class="radio-group">
+                    <label class="radio">
+                        <input type="radio" name="serviceType" value="basic" checked>
+                        <span>Базовая услуга</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="serviceType" value="standard">
+                        <span>Стандартная услуга</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="serviceType" value="premium">
+                        <span>Премиум услуга</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="quantity">Количество часов:</label>
+                <div class="quantity-control">
+                    <button type="button" onclick="changeQuantity(-1)">-</button>
+                    <input type="number" id="quantity" value="1" min="1">
+                    <button type="button" onclick="changeQuantity(1)">+</button>
+                </div>
+            </div>
+            
+            <div class="form-group" id="optionGroup" style="display:none;">
+                <label for="option">Опция услуги:</label>
+                <select id="option">
+                    <option value="0">Без опции</option>
+                    <option value="500">Приоритетная обработка (+500 ₽/час)</option>
+                    <option value="800">Срочное выполнение (+800 ₽/час)</option>
+                </select>
+            </div>
+            
+            <div class="form-group" id="propertyGroup" style="display:none;">
+                <label class="checkbox">
+                    <input type="checkbox" id="property">
+                    <span>Дополнительная гарантия (+15% к стоимости)</span>
+                </label>
+            </div>
+            
+            <div class="price-info">
+                <div class="price-row">
+                    <span>Стоимость за час:</span>
+                    <span id="hourPrice">0 ₽</span>
+                </div>
+                <div class="price-row">
+                    <span>Общая стоимость:</span>
+                    <span id="totalPrice" class="total-price">0 ₽</span>
+                </div>
+            </div>
+            
+            <div class="summary">
+                <h3>Детали расчета:</h3>
+                <div class="summary-row">
+                    <span>Тип услуги:</span>
+                    <span id="summary-type">Базовая</span>
+                </div>
+                <div class="summary-row">
+                    <span>Количество часов:</span>
+                    <span id="summary-quantity">1</span>
+                </div>
+                <div class="summary-row" id="summary-option" style="display:none;">
+                    <span>Опция:</span>
+                    <span id="summary-option-text">-</span>
+                </div>
+                <div class="summary-row" id="summary-property" style="display:none;">
+                    <span>Доп. гарантия:</span>
+                    <span id="summary-property-text">Нет</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

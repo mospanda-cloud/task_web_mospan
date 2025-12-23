@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор стоимости</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Калькулятор стоимости заказа</h1>
+        
+        <div class="calculator">
+            <div class="form-group">
+                <label for="product">Товар:</label>
+                <select id="product">
+                    <option value="1500">Смартфон - 1500 ₽</option>
+                    <option value="850">Наушники - 850 ₽</option>
+                    <option value="2300">Планшет - 2300 ₽</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="quantity">Количество:</label>
+                <div class="quantity-control">
+                    <button type="button" onclick="changeQuantity(-1)">-</button>
+                    <input type="number" id="quantity" value="1" min="1">
+                    <button type="button" onclick="changeQuantity(1)">+</button>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="price">Цена за шт:</label>
+                <div class="price-display" id="price">1500 ₽</div>
+            </div>
+            
+            <button class="calculate-btn" onclick="calculate()">Рассчитать стоимость</button>
+            
+            <div class="result" id="result" style="display:none;">
+                <h3>Результат расчета:</h3>
+                <div class="result-row">
+                    <span>Товар:</span>
+                    <span id="result-product">Смартфон</span>
+                </div>
+                <div class="result-row">
+                    <span>Количество:</span>
+                    <span id="result-quantity">1</span>
+                </div>
+                <div class="result-row">
+                    <span>Цена за шт:</span>
+                    <span id="result-price">1500 ₽</span>
+                </div>
+                <div class="result-total">
+                    <span>Итого:</span>
+                    <span id="result-total">1500 ₽</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

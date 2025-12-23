@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гиперссылки и форма - Задание 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="site-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="logo.jpg" 
+                     alt="Логотип сайта" class="logo">
+            </div>
+            <div class="site-title">
+                <h1>Учебный сайт по веб-разработке</h1>
+            </div>
+        </div>
+    </header>
+
+    <nav id="main-nav">
+        <div class="nav-content">
+            <ul class="menu">
+                <li><a href="#links">Ссылки</a></li>
+                <li><a href="#table">Таблица</a></li>
+                <li><a href="#form">Форма</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section id="links">
+            <h2>Маркированный список гиперссылок</h2>
+            <ol class="links-list">
+                <li><a href="http://kubsu.ru">Абсолютная гиперссылка на главную страницу сайта kubsu.ru</a></li>
+                <li><a href="https://www.kubsu.ru/index.php">Абсолютная на главную сайта kubsu.ru в протоколе https</a></li>
+                <li><a href="https://kubsu.ru/">
+                    <img src="image.jpg" alt="Пример изображения" class="link-image">
+                </a></li>
+                <li><a href="/library">Сокращенная ссылка на внутреннюю страницу</a></li>
+                <li><a href="/">Сокращенная ссылка на главную страницу</a></li>
+                <li><a href="#form">Ссылка на фрагмент текущей страницы</a></li>
+                <li><a href="https://example.com/page?param1=value1&param2=value2&param3=value3">Ссылка с тремя параметрами в URL</a></li>
+                <li><a href="https://www.kubsu.ru/ru/node/38921?id=12345">Ссылка с параметром id в URL</a></li>
+                <li><a href="page.html">Относительная на страницу в текущем каталоге</a></li>
+                <li><a href="about/index.html">Относительная на страницу в каталоге about</a></li>
+                <li><a href="../parent.html">Относительная на страницу в каталоге уровнем выше текущего</a></li>
+                <li><a href="../../grandparent.html">Относительная на страницу в каталоге двумя уровнями выше</a></li>
+                <li>Это <a href="https://www.kubsu.ru/ru/abiturient/campaign2025">контекстная ссылка</a> в тексте абзаца.</li>
+                <li><a href="https://ru.wikipedia.org/wiki/HTML#Версии">Ссылка на фрагмент страницы стороннего сайта</a></li>
+                <li>
+                    <p>Квадрат - русская версия сайта КУБГУ</p>
+                    <p>Круг - английская версия сайта КУБГУ</p>
+                    <img src="KV_KR.jpg" alt="Квадрат и круг" usemap="#examplemap" class="image-map">
+                    <map name="examplemap">
+                        <area shape="rect" coords="240,25,430,195" href="https://kubsu.ru/" alt="Прямоугольная область" title="https://kubsu.ru">
+                        <area shape="circle" coords="110,110,110" href="https://kubsu.ru/en" alt="Круглая область" title="https://kubsu.ru/en">
+                    </map>
+                </li>
+                <li><a href="">Ссылка с пустым href</a></li>
+                <li><a>Ссылка без href</a></li>
+                <li><a href="https://www.twitch.tv/" rel="nofollow">Ссылка, по которой запрещен переход поисковикам</a></li>
+                <li><a href="https://www.leagueoflegends.com/ru-ru/download/" rel="noindex">Запрещенная для индексации поисковиками</a></li>
+                <li>
+                    <ol class="nested-list">
+                        <li><a href="https://ru.wikipedia.org/wiki/HTML" title="HTML Viki">HTML Viki</a></li>
+                        <li><a href="https://vk.com/fckubsu" title="Fckubsu">Fckubsu</a></li>
+                        <li><a href="https://ru.uefa.com/uefachampionsleague/standings/" title="UEFA">UEFA</a></li>
+                    </ol>
+                </li>
+                <li><a href="ftp://user:password@example.com/file.txt">Ссылка на файл на сервере FTP с авторизацией</a></li>
+            </ol>
+        </section>
+
+        <section id="table">
+            <h2>Таблица</h2>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Название компании</th>
+                        <th>Год основания</th>
+                        <th>Страна</th>
+                        <th>Доход (млн $)</th>
+                        <th>Сфера деятельности</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Apple Inc.</td>
+                        <td>1976</td>
+                        <td>США</td>
+                        <td>394,328</td>
+                        <td>Технологии</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Microsoft</td>
+                        <td>1975</td>
+                        <td>США</td>
+                        <td>211,915</td>
+                        <td>Программное обеспечение</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Oracle</td>
+                        <td>1977</td>
+                        <td>США</td>
+                        <td>49,954</td>
+                        <td>Программное обеспечение</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Samsung</td>
+                        <td>1938</td>
+                        <td>Южная Корея</td>
+                        <td>244,200</td>
+                        <td>Электроника</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td colspan="2">Google (Alphabet)</td>
+                        <td>США</td>
+                        <td>282,836</td>
+                        <td>Интернет-сервисы</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Amazon</td>
+                        <td>1994</td>
+                        <td>США</td>
+                        <td>513,983</td>
+                        <td>Электронная коммерция</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="form">
+            <h2>Форма</h2>
+            <form action="#" method="post" class="user-form">
+                <div class="form-group">
+                    <label for="fio">ФИО:</label>
+                    <input type="text" id="fio" name="fio" required placeholder="Иванов Иван Иванович">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+7 (900) 123-45-67">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+                </div>
+                
+                <div class="form-group">
+                    <label for="birthdate">Дата рождения:</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+                
+                <div class="form-group">
+                    <fieldset>
+                        <legend>Пол:</legend>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="male" required> Мужской
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="female"> Женский
+                        </label>
+                    </fieldset>
+                </div>
+                
+                <div class="form-group">
+                    <label for="languages">Любимый язык программирования:</label>
+                    <select id="languages" name="languages[]" multiple size="5">
+                        <option value="pascal">Pascal</option>
+                        <option value="c">C</option>
+                        <option value="cpp">C++</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="php">PHP</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="haskel">Haskel</option>
+                        <option value="clojure">Clojure</option>
+                        <option value="prolog">Prolog</option>
+                        <option value="scala">Scala</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bio">Биография:</label>
+                    <textarea id="bio" name="bio" rows="5" placeholder="Расскажите о себе..."></textarea>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="agreement" name="agreement" required>
+                    <label for="agreement">С контрактом ознакомлен(а)</label>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="submit-btn">Сохранить</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer id="site-footer">
+        <div class="footer-content">
+            <p>Мосьпан Александр</p>
+            <p>Учебный проект по веб-разработке</p>
+        </div>
+    </footer>
+</body>
+</html>
