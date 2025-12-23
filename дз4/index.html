@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гиперссылки и форма - Задание 2 (Bootstrap)</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #2d5a27;
+            --secondary-green: #3a7c31;
+            --light-green: #4caf50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+
+        .site-header {
+            background-color: var(--primary-green);
+            color: white;
+            border-bottom: 3px solid var(--secondary-green);
+        }
+        
+        .logo-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 5px;
+            border: 2px solid white;
+        }
+        
+
+        .site-nav {
+            background-color: var(--secondary-green);
+            border-bottom: 2px solid var(--primary-green);
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover {
+            background-color: var(--primary-green);
+        }
+        
+        .main-content {
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        h2 {
+            color: var(--primary-green);
+            border-bottom: 2px solid var(--light-green);
+            padding-bottom: 8px;
+            font-size: 1.5rem;
+        }
+        
+        .links-list a {
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+        
+        .links-list a:hover {
+            color: var(--secondary-green);
+            text-decoration: underline;
+        }
+        
+        .link-image, .image-map {
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .styled-table {
+            border: 1px solid #ddd;
+        }
+        
+        .styled-table thead {
+            background-color: var(--light-green);
+            color: white;
+        }
+        
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f0f9f0;
+        }
+        
+        .styled-table tbody tr:hover {
+            background-color: #e8f5e8;
+        }
+        
+        .user-form {
+            background-color: #f0f9f0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .form-label {
+            color: var(--primary-green);
+            font-weight: 500;
+        }
+        
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background-color: white;
+        }
+        
+        legend {
+            color: var(--primary-green);
+            font-weight: 500;
+        }
+        
+        .submit-btn {
+            background-color: var(--light-green);
+            color: white;
+            border: none;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--secondary-green);
+        }
+        
+        .site-footer {
+            background-color: var(--primary-green);
+            color: white;
+            border-top: 3px solid var(--secondary-green);
+        }
+        
+        .section-spacing {
+            margin-bottom: 2rem;
+        }
+        
+        .nested-list {
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <div class="logo-container">
+                        <img src="logo.jpg" alt="Логотип сайта" class="logo-img">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="site-title">
+                        <h1 class="h4 mb-0">Учебный сайт по веб-разработке</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="site-nav navbar navbar-expand-lg">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link px-3 py-2" href="#links">Ссылки</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 py-2" href="#table">Таблица</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 py-2" href="#form">Форма</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-4">
+        <div class="main-content p-3 p-md-4">
+            <section id="links" class="section-spacing">
+                <h2 class="mb-3">Маркированный список гиперссылок</h2>
+                <ol class="links-list ps-4">
+                    <li class="mb-2"><a href="http://kubsu.ru">Абсолютная гиперссылка на главную страницу сайта kubsu.ru</a></li>
+                    <li class="mb-2"><a href="https://www.kubsu.ru/index.php">Абсолютная на главную сайта kubsu.ru в протоколе https</a></li>
+                    <li class="mb-2">
+                        <a href="https://kubsu.ru/">
+                            <img src="image.jpg" alt="Пример изображения" class="link-image mt-1">
+                        </a>
+                    </li>
+                    <li class="mb-2"><a href="/library">Сокращенная ссылка на внутреннюю страницу</a></li>
+                    <li class="mb-2"><a href="/">Сокращенная ссылка на главную страницу</a></li>
+                    <li class="mb-2"><a href="#form">Ссылка на фрагмент текущей страницы</a></li>
+                    <li class="mb-2"><a href="https://example.com/page?param1=value1&param2=value2&param3=value3">Ссылка с тремя параметрами в URL</a></li>
+                    <li class="mb-2"><a href="https://www.kubsu.ru/ru/node/38921?id=12345">Ссылка с параметром id в URL</a></li>
+                    <li class="mb-2"><a href="page.html">Относительная на страницу в текущем каталоге</a></li>
+                    <li class="mb-2"><a href="about/index.html">Относительная на страницу в каталоге about</a></li>
+                    <li class="mb-2"><a href="../parent.html">Относительная на страницу в каталоге уровнем выше текущего</a></li>
+                    <li class="mb-2"><a href="../../grandparent.html">Относительная на страницу в каталоге двумя уровнями выше</a></li>
+                    <li class="mb-2">Это <a href="https://www.kubsu.ru/ru/abiturient/campaign2025">контекстная ссылка</a> в тексте абзаца.</li>
+                    <li class="mb-2"><a href="https://ru.wikipedia.org/wiki/HTML#Версии">Ссылка на фрагмент страницы стороннего сайта</a></li>
+                    <li class="mb-2">
+                        <p class="mb-1">Квадрат - русская версия сайта КУБГУ</p>
+                        <p class="mb-2">Круг - английская версия сайта КУБГУ</p>
+                        <img src="KV_KR.jpg" alt="Квадрат и круг" usemap="#examplemap" class="image-map">
+                        <map name="examplemap">
+                            <area shape="rect" coords="240,25,430,195" href="https://kubsu.ru/" alt="Прямоугольная область" title="https://kubsu.ru">
+                            <area shape="circle" coords="110,110,110" href="https://kubsu.ru/en" alt="Круглая область" title="https://kubsu.ru/en">
+                        </map>
+                    </li>
+                    <li class="mb-2"><a href="">Ссылка с пустым href</a></li>
+                    <li class="mb-2"><a>Ссылка без href</a></li>
+                    <li class="mb-2"><a href="https://www.twitch.tv/" rel="nofollow">Ссылка, по которой запрещен переход поисковикам</a></li>
+                    <li class="mb-2"><a href="https://www.leagueoflegends.com/ru-ru/download/" rel="noindex">Запрещенная для индексации поисковиками</a></li>
+                    <li class="mb-2">
+                        <ol class="nested-list">
+                            <li><a href="https://ru.wikipedia.org/wiki/HTML" title="HTML Viki">HTML Viki</a></li>
+                            <li><a href="https://vk.com/fckubsu" title="Fckubsu">Fckubsu</a></li>
+                            <li><a href="https://ru.uefa.com/uefachampionsleague/standings/" title="UEFA">UEFA</a></li>
+                        </ol>
+                    </li>
+                    <li class="mb-2"><a href="ftp://user:password@example.com/file.txt">Ссылка на файл на сервере FTP с авторизацией</a></li>
+                </ol>
+            </section>
+
+            <section id="table" class="section-spacing">
+                <h2 class="mb-3">Таблица</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered styled-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">№</th>
+                                <th scope="col">Название компании</th>
+                                <th scope="col">Год основания</th>
+                                <th scope="col">Страна</th>
+                                <th scope="col">Доход (млн $)</th>
+                                <th scope="col">Сфера деятельности</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Apple Inc.</td>
+                                <td>1976</td>
+                                <td>США</td>
+                                <td>394,328</td>
+                                <td>Технологии</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Microsoft</td>
+                                <td>1975</td>
+                                <td>США</td>
+                                <td>211,915</td>
+                                <td>Программное обеспечение</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Oracle</td>
+                                <td>1977</td>
+                                <td>США</td>
+                                <td>49,954</td>
+                                <td>Программное обеспечение</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Samsung</td>
+                                <td>1938</td>
+                                <td>Южная Корея</td>
+                                <td>244,200</td>
+                                <td>Электроника</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td colspan="2">Google (Alphabet)</td>
+                                <td>США</td>
+                                <td>282,836</td>
+                                <td>Интернет-сервисы</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Amazon</td>
+                                <td>1994</td>
+                                <td>США</td>
+                                <td>513,983</td>
+                                <td>Электронная коммерция</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="form" class="section-spacing">
+                <h2 class="mb-3">Форма</h2>
+                <form action="#" method="post" class="user-form p-3 p-md-4">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label for="fio" class="form-label">ФИО:</label>
+                            <input type="text" class="form-control" id="fio" name="fio" required placeholder="Иванов Иван Иванович">
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="phone" class="form-label">Телефон:</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" required placeholder="+7 (900) 123-45-67">
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="email" class="form-label">E-mail:</label>
+                            <input type="email" class="form-control" id="email" name="email" required placeholder="example@mail.ru">
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <label for="birthdate" class="form-label">Дата рождения:</label>
+                            <input type="date" class="form-control" id="birthdate" name="birthdate" required>
+                        </div>
+                        
+                        <div class="col-12">
+                            <fieldset class="p-3">
+                                <legend class="form-label mb-2">Пол:</legend>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                                    <label class="form-check-label" for="male">Мужской</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                                    <label class="form-check-label" for="female">Женский</label>
+                                </div>
+                            </fieldset>
+                        </div>
+                        
+                        <div class="col-12">
+                            <label for="languages" class="form-label">Любимый язык программирования:</label>
+                            <select class="form-select" id="languages" name="languages[]" multiple size="5">
+                                <option value="pascal">Pascal</option>
+                                <option value="c">C</option>
+                                <option value="cpp">C++</option>
+                                <option value="javascript">JavaScript</option>
+                                <option value="php">PHP</option>
+                                <option value="python">Python</option>
+                                <option value="java">Java</option>
+                                <option value="haskel">Haskel</option>
+                                <option value="clojure">Clojure</option>
+                                <option value="prolog">Prolog</option>
+                                <option value="scala">Scala</option>
+                            </select>
+                            <div class="form-text">Удерживайте Ctrl для выбора нескольких вариантов</div>
+                        </div>
+                        
+                        <div class="col-12">
+                            <label for="bio" class="form-label">Биография:</label>
+                            <textarea class="form-control" id="bio" name="bio" rows="5" placeholder="Расскажите о себе..."></textarea>
+                        </div>
+                        
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="agreement" name="agreement" required>
+                                <label class="form-check-label" for="agreement">С контрактом ознакомлен(а)</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12">
+                            <button type="submit" class="btn submit-btn px-4 py-2">Сохранить</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer py-4 mt-4">
+        <div class="container">
+            <div class="footer-content text-center">
+                <p class="fw-medium mb-1">Мосьпан Александр</p>
+                <p class="mb-0">Учебный проект по веб-разработке</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
